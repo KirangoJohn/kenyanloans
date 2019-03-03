@@ -1,0 +1,57 @@
+{% extends 'loans/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Page top section -->
+<section class="page-top-section set-bg" data-setbg="{% static 'img/banner.jpg' %}">
+    <div class="container text-white">
+        <!----h2>{{ loan_company.company_name }}</h2-->
+        </div>
+    </section>
+    <!--  Page top end -->
+    
+    
+    <div class="container text-black">
+            <div class="col-12 ">
+            
+                </div>
+<!-- Breadcrumb -->
+	<div class="site-breadcrumb">
+            <div>
+                <a href="{% url 'loans:index' %}"><i class="fa fa-home"></i>Home</a>
+                <span><i class="fa fa-angle-right">{{ loan_company.company_name }}</i></span>
+            </div>
+        </div>
+<!-- Page -->
+            <div class="row">
+    <div class="col-sm-8 ">
+<h4>{{ loan_company.company_name }}</h4><br>
+<h5>Loan Details</h5>
+    <p>Loan type:- {{ loan_company.loan_type }}</i>
+    <p>Interest Rate: -  {{ loan_company.interest_rate }}%
+    <p>Details: - {{ loan_company.description }}
+    <p>Contatcts: - {{ loan_company.phone }}
+    <p>Email: - {{ loan_company.email }}
+    <p>Website: - <a href="">{{ loan_company.website }}</a>
+</p>
+<br>
+        <h5>Requirements for Application</h5>
+        <p>{{ loan_company.requirements }}</p>
+
+        <h5>How to apply</h5>
+        <p>{{ loan_company.how_to }}</p>
+
+        <h5>Why borrow a loan from {{ loan_company.company_name }}</h5>
+        <p>{{ loan_company.merits }}</p>
+</div>
+
+<div class="col-sm-4 ">
+        
+    </div>
+    <div class="col-sm-12">
+           
+                </div>
+</div>
+</div>
+
+
+{%endblock%}

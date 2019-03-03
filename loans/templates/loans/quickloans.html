@@ -1,0 +1,45 @@
+{% extends 'loans/base.html' %}
+{% load static %}
+{% block content %}
+
+{% if latest_loans_list %}
+
+<!-- Page top section -->
+<section class="page-top-section set-bg" data-setbg="{% static 'img/banner1.jpg' %}">
+    <!----div class="container text-white">
+        <h2>Quick Loans</h2>
+        </div-->
+    </section>
+    <!--  Page top end -->
+    
+    <div class="container text-black">
+            <div class="col-12 well">
+        
+                </div>
+        <div class="row">
+          
+                <div class="col-sm-8 ">
+    <p>
+    {% for loan_company in latest_loans_list %}
+        <p class="text-green"><a href="{%url 'loans:detail' loan_company.id %}">{{ loan_company.company_name }}</a>
+        <br>{{ loan_company.description }}
+    {% endfor %}
+    <br>
+    </p>
+{% else %}
+    <p>No data available.</p>
+{% endif %}
+
+</div>
+
+<div class="col-sm-4 well">
+        
+    </div>
+    <div class="col-12 well ">
+            
+                </div>
+</div>
+</div>
+
+
+{%endblock%}

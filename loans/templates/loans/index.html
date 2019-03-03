@@ -1,0 +1,59 @@
+{% extends 'loans/base.html' %}
+{% load static %}
+{% block content %}
+
+{% if loan_comp %}
+
+<!-- Page top section -->
+<section class="page-top-section set-bg" data-setbg="{% static 'img/banner1.jpg' %}">
+    <div class="container text-white">
+        <!----h2>access your financing today</h2-->
+        </div>
+    </section>
+    <!--  Page top end -->
+    
+    <div class="container text-black">
+            <div class="col-12 well">
+        
+                </div>
+        <div class="row">
+          
+                <div class="col-sm-8 ">
+                        <h2>FINANCING IN KENYA </h2><br>
+                       <p> Accessing loans in Kenya was never easy in the 
+                            previous years but now with the introduction of unsecured loans and many 
+                            private companies getting into lending business, you can access loans 
+                            within minutes after application. Below is a list of organisations in Kenya that provide financing to their customers.</p>
+                           
+                     <br>
+                            {% for loan_company in loan_comp %}
+                            <div class="table-responsive text-align: left">          
+                                    <table class="table">
+                                    <tbody>
+                                            <tr>
+                                              <td><a href="{%url 'loans:detail' loan_company.id %}">{{ loan_company.company_name }}</a></td>
+                                              <td class="align-middle">{{ loan_company.description }}</td>
+                                              <td><a href="{%url 'loans:detail' loan_company.id %}">Read More</a></td>
+                                            </tr>
+                                        </tbody>
+                            </table>
+                            </div>
+                            {% endfor %}
+                            <br>
+                        {% else %}
+                    
+                            <p>No records are available.</p>
+                        {% endif %}
+</div>
+
+<div class="col-sm-4 well">
+        
+    </div>
+    <div class="col-12 well ">
+            
+                </div>
+</div>
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,45 @@
+{% extends 'loans/base.html' %}
+{% load static %}
+{% block content %}
+
+{% if faqs_list %}
+
+<!-- Page top section -->
+<section class="page-top-section set-bg" data-setbg="{% static 'img/banner.jpg' %}">
+    <div class="container text-white">
+        <h2>FAQs</h2>
+        </div>
+    </section>
+    <!--  Page top end -->
+    
+    <div class="container text-black">
+            <div class="col-12 well">
+        
+                </div>
+        <div class="row">
+          
+                <div class="col-sm-8 ">
+    <p>
+    {% for faqs in faqs_list %}
+        <p class="text-green">{{ faqs.question }}</a>
+        <p>{{ faqs.answer }}</a></p>
+    {% endfor %}
+    <br>
+    </p>
+{% else %}
+    <p>No Questions are available.</p>
+{% endif %}
+
+</div>
+
+<div class="col-sm-4 well">
+        
+    </div>
+    <div class="col-12 well ">
+            
+                </div>
+</div>
+</div>
+
+
+{%endblock%}
